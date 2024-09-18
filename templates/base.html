@@ -10,6 +10,26 @@
     >
 </head>
 <body class="container">
-    {% block page_content %}{% endblock page_content %} 
+    {% block heading %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Derrell's Portfolio Page</h1>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+    {% endblock heading %}
+    {% block project_menu %}
+<div class="row">
+    </div>
+    <div class="col-sm-10">
+        {% block page_content %}{% endblock page_content %} 
+    </div>
+    {% endblock project_menu %}
+</div>
+    
 </body>
 </html>

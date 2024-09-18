@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block project_menu %}
+<div class="row">
+    <div class="col-md-2">
+        <div class="list-group" role="tablist">
+            <a href="{% url 'project_index' %}" class="list-group-item list-group-item-action">
+              List of  Projects
+            </a>
+            
+            {% for project in projects %}
+            <a href="{% url 'project_detail' project.pk %}" class="list-group-item list-group-item-action">--{{project.title}}</a>
+            {% endfor %}
+            
+          </div>
+    </div>
+    <div class="col-md-10">
+        {% block page_content %}{% endblock page_content %}
+    </div>
+</div>
+{% endblock project_menu %}
