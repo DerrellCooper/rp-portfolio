@@ -2,5 +2,42 @@
 {% extends 'base.html' %}
 
 {% block page_content %}
-    <h1>Hello World</h1>    
+<div class="container" style="height: 100%;" >
+    <div class="row align-items-center" style="height: 100%;" >
+        <div class="col-sm-6">
+            <a href="{% url 'aboutme' %}">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                            <h5 class="card-title">Profile</h5>
+                            <p class="card-text">Learn a little about myself as well as my skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="{% url 'project_index' %}">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-body">
+                            <h5 class="card-title">Projects</h5>
+                            <p class="card-text">These projects highlight particular skills and technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>    
 {% endblock page_content %}
