@@ -13,7 +13,7 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{project.title}}</h5>
-                <p class="card-body">{{project.description}}</p>
+                <p class="card-body">{{project.technology}}</p>
                 <a href="{% url 'project_detail' project.pk %}"
                    class="btn-primary">
                 Read More</a>

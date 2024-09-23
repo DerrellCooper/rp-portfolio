@@ -2,71 +2,72 @@
 {%extends 'base.html' %}
 
 {% block page_content %}
-<div class="card mb-3" >
+<div class="row" style="height:max-content;">
+  <div class="card mb-3" >
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-        </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Derrell Cooper</h5>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              About Me
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <p>A short summary about myself</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Skills and Technologies
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>Frameworks</Frame></strong>
-                              <ul>
-                                <li>React</li>
-                                <li>Django</li>
-                              </ul>
-                              <Strong>Languages</Strong>
-                              <ul>
-                                <li>Javascript</li>
-                                <li>C#</li>
-                                <li>Python</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Contact Information
-                            </button>
-                          </h2>
-                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>Phone: 228-263-1648</li>
-                                    <li>Email: Derrell.Cooper@mscoding.org</li>
-                                    <li><a href="http://www.linkedin.com/in/derrell-cooper-4a194a2a1" target="_blank">Linkedin</a></li>
-                                </ul>
-                                
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+        <img src="{{ profile.image.url }}" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{profile.name}}</h5>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  About Me
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>{{ profile.about_me }}</p>
+                </div>
+              </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Skills and Technologies
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Frameworks</Frame></strong>
+                  <ul>
+                    <li>React</li>
+                    <li>Django</li>
+                  </ul>
+                  <Strong>Languages</Strong>
+                  <ul>
+                    <li>Javascript</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Contact Information
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul>
+                      <li>Phone: {{ profile.phone }}</li>
+                      <li>Email: {{profile.email}}</li>
+                      <li><a href="{{ profile.linkedin }}" target="_blank">Linkedin</a></li>
+                  </ul>                    
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock page_content %}
