@@ -6,17 +6,18 @@
 <h1>Projects</h1>
 <div class="row">
 {% for project in projects %}
-    <div class="col-md-4">
+    <div class="col-md-4 position-relative">
         <div class="card mb-2" style="height: 100%;">
             {% if project.image %}
-                <img class="card-img-top" src="{{project.image.url}}">
+                <img class="card-img-top" src="{{project.image.url}}" style="height: 100%; width: 100%;">
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{project.title}}</h5>
                 <p class="card-body">{{project.technology}}</p>
-                <a href="{% url 'project_detail' project.pk %}"
-                   class="btn-primary">
-                Read More</a>
+                <div class="card-body-secondary position-absolute bottom-0">
+                    <small><a href="{% url 'project_detail' project.pk %}">
+                    Read More</a></small>
+                </div>
             </div>
         </div>
     </div>
